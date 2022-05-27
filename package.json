@@ -6,11 +6,15 @@
   "author": "kieuphu",
   "license": "MIT",
   "dependencies": {
+    "@googleapis/docs": "^0.4.1",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
+    "google-sheets-api": "^1.0.1",
     "node-telegram-bot-api": "^0.57.0",
     "nodemon": "^2.0.14",
-    "sequelize": "^6.8.0"
+    "sequelize": "^6.8.0",
+    "socks5-https-client": "^1.2.1",
+    "telegram-format": "^2.1.0"
   },
   "scripts": {
     "start": "nodemon main.js",
