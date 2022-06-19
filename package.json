@@ -7,11 +7,13 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "fcm-node": "^1.6.1",
+    "joi": "^17.6.0",
     "nodemon": "^2.0.14",
     "sequelize": "^6.8.0"
   },
   "scripts": {
-    "start": "nodemon main.js",
+    "start": "nodemon --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
