@@ -10,6 +10,7 @@
     "fcm-node": "^1.6.1",
     "joi": "^17.6.0",
     "nodemon": "^2.0.14",
+    "redis": "^4.1.0",
     "sequelize": "^6.8.0"
   },
   "scripts": {
