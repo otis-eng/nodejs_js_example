@@ -5,17 +5,17 @@ const router = require("./api/router");
 const jsonParser = express.json();
 
 const client = redis.createClient();
-client.connect("connect", function () {
-  console.log("Connect success");
-});
-client.on("error", (err) => {
-  console.log("connect error", err.message);
-});
-client.on("connect", function () {
-  console.log("connect redis");
-});
+// client.connect("connect", function () {
+//   console.log("Connect success");
+// });
+// client.on("error", (err) => {
+//   console.log("connect error", err.message);
+// });
+// client.on("connect", function () {
+//   console.log("connect redis");
+// });
 
-global.cache = client;
+// global.cache = client;
 app.use(express.json());
 
 app.use(jsonParser);
