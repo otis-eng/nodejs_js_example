@@ -1,4 +1,4 @@
-var messagebird = require("messagebird")("9xZ2ZysaxZFzN9i4swKE72AQD");
+
 
 const userController = async (req, res) => {
   var params = {
