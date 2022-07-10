@@ -1,21 +1,38 @@
-// const { cache } = require("joi");
+const firebase = require("firebase-admin");
 
-// const sendMessage = require("../fcm/fcm");
-const sendMessage = require("../api/vogane/voagen.api");
+const serviceAccount = require("./serviceAccountKey.json");
 
-// const { cache } = require("joi");
+// The Firebase token of the device which will get the notification
+// It can be a string or an array of strings
 
-// const cache = require("redis");
+firebase.initializeApp({
+  credential: firebase.credential.cert(serviceAccount),
+  databaseURL: "https://spa-service-be443.firebaseio.com",
+});
+
 const userController = async (req, res) => {
-  // console.log(req.body);
-  // //cache.set("key", "value");
-  // const reulst = await cache.get("key");
   try {
-    await sendMessage();
-    return res.status(200).send("faild");
+    const firebaseToken = "";
+    const payload = {
+      notification: {
+        title: "Notification Title",
+        body: "This is an example notification",
+      },
+    };
+
+    const options = {
+      priority: "high",
+      timeToLive: 60 * 60 * 24, // 1 day
+    };
+
+    firebase
+      .messaging()
+      .sendToDevice(firebaseToken, payload, options)
+      .then((value) => {
+        return res.json(value);
+      });
   } catch (err) {
-    console.log(err.message);
-    throw err;
+    return res.json(err.message);
   }
 };
 
