@@ -1,21 +1,15 @@
 var FCM = require("fcm-node");
 const axios = require("axios");
 
-const fcm_token = `AAAAC8gP57U:APA91bFkAlkQXWqdJBb8TaXH-gHgnR3wxK8PWVLQyo-Wv5sRIGtec72jkZ-0ThiSb5WakwdKh7xM-jvco7fb1exQpZTxdKH43b3XjcT3z6j3JnCPAgreNptp9s9MkC8gL0c5Lh3i-lpc`;
+const fcm_token = ``;
 console.log(fcm_token);
 const fcm = new FCM(fcm_token);
 
 async function sendMessage(messages) {
   try {
     const url = "https://fcm.googleapis.com/fcm/send";
-    // Map<String, String> headers = {
-    //   HttpHeaders.contentTypeHeader: 'application/json',
-    //   'Content-Type': 'application/json',
-    //   'authorization':
-    //       'Bearer AAAAhX6S7fI:APA91bG49ME9K85FNYrwp3hk6s4EO_39ZFcQxkTdkAbIDEGIl20CpSH3LdZNovoshckni9PX6en28H3Z4TALn21K4wFGkw7qcGQdH6uvF6zGacTPt4cevWJyCriav4g7r-0jcAmHl2Uk'
-    // };
     const data = {
-      to: "cpsYgh_e9E6ZodL2Uh-nMY:APA91bF9Kj5zngMG1v-daqvy4LfwlR-zYha0PYyhNJ1wsmDc-3UzNw3eJcbrqKtIF_rtGuTpiMS6X6pLujSOYOn3awvtsYuNQwymkVLzS-hY90KTqKcZKO6CkzIZa8C-BLHDU-nj9q2f",
+      to: "",
       notification: {
         title: "test chat notifications",
         body: "bode test notifications",
@@ -29,7 +23,7 @@ async function sendMessage(messages) {
     const headers = {
       "content-type": "application/json",
       Authorization:
-        "Bearer AAAAC8gP57U:APA91bFkAlkQXWqdJBb8TaXH-gHgnR3wxK8PWVLQyo-Wv5sRIGtec72jkZ-0ThiSb5WakwdKh7xM-jvco7fb1exQpZTxdKH43b3XjcT3z6j3JnCPAgreNptp9s9MkC8gL0c5Lh3i-lpc", // 'key=YOUR_SERVER_KEY'
+        "Bearer ", // 'key=YOUR_SERVER_KEY'
     };
     const result = await axios.post(url, {
       data,
